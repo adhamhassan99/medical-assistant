@@ -24,6 +24,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e0eb2c36-eec1-4666-8f5d-cb6b7e51b8ed"
+      }
+    },
+    "owner": "adhamhassan"
   }
 }
