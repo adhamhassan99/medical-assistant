@@ -18,7 +18,7 @@ export default function App() {
       <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
         <View style={styles.container}>
           <Header />
-          <KeyboardAvoidingView behavior='padding' style={{ flex: 1 }}>
+          <KeyboardAvoidingView behavior='height' style={{ flex: 1, width: '100%' }} >
 
             <ScrollView showsVerticalScrollIndicator={false} width={'100%'} marginBottom={20}>
 
