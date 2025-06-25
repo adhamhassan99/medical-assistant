@@ -4,16 +4,16 @@ import InteractionCard from './InteractionCard'
 import SimpleSlider from './Slider'
 
 type Props = {
-    sleepAmount?: number
-    setSleepAmount?: (sleepAmount: number) => void
+    sleepAmount: number[]
+    setSleepAmount: (sleepAmount: number[]) => void
 }
 
-const SleepTimePicker = ({ sleepAmount = 5, setSleepAmount }: Props) => {
+const SleepTimePicker = ({ sleepAmount = [5], setSleepAmount }: Props) => {
     return (
         <InteractionCard>
             <YStack gap={25}>
                 <Text fontSize={20} fontWeight={'bold'}>Sleep Hours Last Night</Text>
-                <SimpleSlider min={1} max={12} step={1} defaultValue={[sleepAmount]} />
+                <SimpleSlider min={1} max={12} step={1} defaultValue={sleepAmount} value={sleepAmount} onValueChange={setSleepAmount} />
                 <XStack justifyContent='space-between' alignItems='center'>
                     <Text fontSize={15}>1h</Text>
                     <XStack gap={5} alignItems='center'>
