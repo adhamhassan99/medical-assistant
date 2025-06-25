@@ -26,8 +26,8 @@ export default function App() {
               <OptionalNotes />
             </YStack>
           </ScrollView>
-          <Button width={'90%'} icon={Send} backgroundColor={'#0280f6'} color={'#ce4a4a'}>
-            Large
+          <Button width={'90%'} icon={Send} backgroundColor={'#0280f6'} color={'#ffffff'} fontWeight={'bold'} size={'$4'}>
+            Submit
           </Button>
         </View>
       </SafeAreaView>
