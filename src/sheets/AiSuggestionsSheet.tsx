@@ -4,6 +4,8 @@ import { BottomSheetModal, BottomSheetModalProps, BottomSheetView } from '@gorho
 import { Text, YStack } from 'tamagui'
 import LottieView from "lottie-react-native";
 import AIRecommendationPill from '../components/AIRecommendationPill';
+import * as Haptics from 'expo-haptics'
+
 
 type Props = {
     ref?: React.ForwardedRef<BottomSheetModal<any>>
@@ -30,7 +32,11 @@ const AiSuggestionsSheet = ({ onChange, ref }: Props) => {
                     style={{ width: "100%", height: "20%" }}
                     autoPlay
                     loop={false}
-                    onAnimationFinish={() => { }}
+                    onAnimationFinish={() => {
+                        Haptics.notificationAsync(
+                            Haptics.NotificationFeedbackType.Success
+                        )
+                    }}
                 />
 
                 <Text marginVertical={15} fontWeight={600} fontSize={24}>Check in complete!</Text>
