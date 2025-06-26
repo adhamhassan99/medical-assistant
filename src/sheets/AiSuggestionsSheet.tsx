@@ -1,22 +1,23 @@
 import { StyleSheet } from 'react-native'
 import React from 'react'
 import { BottomSheetModal, BottomSheetModalProps, BottomSheetView } from '@gorhom/bottom-sheet'
-import { Text, YStack } from 'tamagui'
+import { Button, Text, YStack } from 'tamagui'
 import LottieView from "lottie-react-native";
 import AIRecommendationPill from '../components/AIRecommendationPill';
 import * as Haptics from 'expo-haptics'
-import Animated, { FadeInLeft } from 'react-native-reanimated';
+import Animated, { FadeInDown, FadeInLeft, FadeInUp } from 'react-native-reanimated';
 
 
 type Props = {
-    ref?: React.ForwardedRef<BottomSheetModal<any>>
+    ref: React.ForwardedRef<BottomSheetModal<any>>
+    handleSheetClose: () => void
 } & Omit<BottomSheetModalProps, 'children'>
 
 const AiSuggestions = [
     { tint: '#0040ff41', iconColor: '#0040ff', suggestion: 'Try meditating for 10 minutes today to improve your mood' }, { tint: '#aa00ff26', iconColor: '#aa00ff', suggestion: 'Consider a consistent bedtime routine for better sleep quality' }, { tint: '#31d91e37', iconColor: '#13a902', suggestion: 'A 15-minute walk can boost your energy levels' }
 ]
 
-const AiSuggestionsSheet = ({ onChange, ref }: Props) => {
+const AiSuggestionsSheet = ({ handleSheetClose, ref, onChange }: Props) => {
     return (
         <BottomSheetModal
             ref={ref}
@@ -52,6 +53,11 @@ const AiSuggestionsSheet = ({ onChange, ref }: Props) => {
 
                         ))}
                     </YStack>
+
+                    <Animated.View entering={FadeInDown.delay(1500)}>
+                        <Button onPress={handleSheetClose}>Go Back</Button>
+                    </Animated.View>
+
                 </YStack>
             </BottomSheetView>
         </BottomSheetModal>

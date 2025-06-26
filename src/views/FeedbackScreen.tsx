@@ -20,8 +20,11 @@ const FeedbackScreen = (props: Props) => {
     const handlePresentModalPress = useCallback(() => {
         bottomSheetModalRef.current?.present();
     }, []);
-    const handleSheetChanges = useCallback((index: number) => {
-        console.log('handleSheetChanges', index);
+
+
+    const handleSheetClose = useCallback(() => {
+
+        bottomSheetModalRef.current?.close()
     }, []);
 
     return (
@@ -35,7 +38,7 @@ const FeedbackScreen = (props: Props) => {
 
             </ScrollView>
 
-            <AiSuggestionsSheet ref={bottomSheetModalRef} onChange={handleSheetChanges} />
+            <AiSuggestionsSheet ref={bottomSheetModalRef} handleSheetClose={handleSheetClose} onChange={(i) => { }} />
         </View>
     )
 }
