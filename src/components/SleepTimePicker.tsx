@@ -12,7 +12,9 @@ type Props = {
 const SleepTimePicker = ({ sleepAmount = [5], setSleepAmount }: Props) => {
     const handleSleepChange = (sleep: number[]) => {
         setSleepAmount(sleep)
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
+        Haptics.notificationAsync(
+            Haptics.NotificationFeedbackType.Success
+        )
     }
     return (
         <InteractionCard>

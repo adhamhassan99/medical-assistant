@@ -5,6 +5,7 @@ import { Text, YStack } from 'tamagui'
 import LottieView from "lottie-react-native";
 import AIRecommendationPill from '../components/AIRecommendationPill';
 import * as Haptics from 'expo-haptics'
+import Animated, { FadeInLeft } from 'react-native-reanimated';
 
 
 type Props = {
@@ -44,8 +45,11 @@ const AiSuggestionsSheet = ({ onChange, ref }: Props) => {
                 <YStack width={'100%'} flex={1} paddingVertical={30} gap={20}>
                     <Text fontSize={16} fontWeight={600}>AI Recommendations:</Text>
                     <YStack gap={15}>
-                        {AiSuggestions.map(item => (
-                            <AIRecommendationPill key={item.suggestion} {...item} />
+                        {AiSuggestions.map((item, index) => (
+                            <Animated.View entering={FadeInLeft.delay(300 * (index + 1))} key={item.suggestion}>
+                                <AIRecommendationPill  {...item} />
+                            </Animated.View>
+
                         ))}
                     </YStack>
                 </YStack>
