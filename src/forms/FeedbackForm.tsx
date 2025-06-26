@@ -1,13 +1,16 @@
 import { View, Text } from 'react-native'
-import React from 'react'
-import { Button, YStack } from 'tamagui'
+import React, { useState } from 'react'
+import { Button, Sheet, YStack } from 'tamagui'
 import MoodSelector from '../components/MoodSelector'
 import SleepTimePicker from '../components/SleepTimePicker'
 import OptionalNotes from '../components/OptionalNotes'
 import { Send } from '@tamagui/lucide-icons'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-type Props = {}
+type Props = {
+    onSuccess: () => void
+}
 
 type FormData = {
     mood: string
@@ -15,20 +18,27 @@ type FormData = {
     notes: string
 }
 
-const FeedbackForm = (props: Props) => {
+const FeedbackForm = ({ onSuccess }: Props) => {
     const {
         control,
         handleSubmit,
         formState: { errors, isValid },
     } = useForm<FormData>({
         defaultValues: {
-            sleepTime: [5],
+            sleepTime: [8],
         },
     })
-    const onSubmit: SubmitHandler<FormData> = (data) => console.log(data)
+    const onSubmit: SubmitHandler<FormData> = (data) => {
+        console.log(data)
+        onSuccess()
+    }
+    const { bottom } = useSafeAreaInsets();
+
+    const [modalOpen, setModalOpen] = useState(false)
+
     return (
 
-        <YStack paddingHorizontal={20} gap={20} width={'100%'}>
+        <YStack paddingBottom={bottom} paddingHorizontal={20} gap={20} width={'100%'}>
             <Controller
                 rules={{ required: true }}
                 control={control}
@@ -48,6 +58,7 @@ const FeedbackForm = (props: Props) => {
             <Button alignSelf='center' marginTop={20} width={'100%'} icon={Send} backgroundColor={'#0280f6'} color={'#ffffff'} fontWeight={'bold'} size={'$4'} onPress={handleSubmit(onSubmit)} disabled={!isValid} opacity={!isValid ? 0.5 : 1}>
                 Submit
             </Button>
+
         </YStack>
     )
 }
