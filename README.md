@@ -35,50 +35,50 @@ yarn run start
 
 ## 🛠️ Implementation Approach
 
-- 🔹 [Bullet point 1 about your overall approach]  
-- 🔹 [Bullet point 2 — highlight any structuring, flow, or logic]  
-- 🔹 [Bullet point 3 — can be about performance, animations, etc.]  
+- Simple and straight to the point
+- Used an AI tool that generates Basic UI Designs
+- Generated a concept for the criteria needed
+- Upon Submitting the Bottom sheet opens with mock AI Suggestions
 
 ---
 
 ## 🎨 Design Decisions
 
-> _Explain any two interesting or important design choices you made._
+1. As requested a Slider was used from Tamagui to let the user select the sleep duration
+2. I implemented a Toggle like behaviour component that chooses between one moood
+3. Since the success Animation was better to be a Lottie file I implemented animation in a different aspect to highlight my animation creation capability.
+4. The AI suggestions are staggered using the Reanimated library as well as the go back button
+5. Regarding component reuse i was able to create a reusable Card component that wraps the mood, sleep and notes sections. I also created a reusable Ai Suggestion card accepts an icon name, tint color and bg shade.
 
-1. **[Design Decision #1 - e.g., UI structure, screen layout, or state separation]**  
-   _Explain the reasoning behind this decision._  
-
-2. **[Design Decision #2 - e.g., animation logic, performance optimization, component reuse]**  
-   _Describe how it impacted usability, maintainability, or performance._  
 
 ---
 
 ## 🧩 Areas for Improvement
 
-> _Mention one enhancement you’d like to make given more time._
 
-- I would improve **[feature or area]** by **[how you’d improve it]**, which would help with **[benefit: user experience, performance, cleaner code, etc.]**.
+- I would improve **Theming and reusable components** by **having a consistent theme across the app and screens**, which would help with **better User Experience**.
+- I would improve **the overall app UI Design** by **having a real UI Design from a professional**, which would help with **better User Experience**.
+- I would improve **keyboard avoiding view** by **having a more consistent behaviour across different OSs**, which would help with **better performance**.
 
----
 
-## 📸 Screenshots (Optional)
-
-> _Add app screenshots or GIFs here._
-
-<!-- Example -->
-<!-- ![Screenshot 1](./assets/screenshots/screen1.png) -->
-<!-- ![Screenshot 2](./assets/screenshots/screen2.png) -->
 
 ---
 
-## 💬 Feedback & Contributions
+## 📸 Screenshots
 
-Have feedback or ideas? Open an issue or submit a pull request — contributions are welcome!
+
+<div style="display: flex; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/b64482b1-7063-4d4d-92e7-f357f073dbdf" alt="Screenshot 1" style="width: 400px; height: auto;"/>
+  <img src="https://github.com/user-attachments/assets/843c14ed-bbc0-4ac1-8459-ed8eb8f5232c" alt="Screenshot 2" style="width: 400px; height: auto;"/>
+  <img src="https://github.com/user-attachments/assets/25ddfdf3-a83d-4a81-a704-3157bedb0084" alt="Screenshot 3" style="width: 400px; height: auto;" />
+</div>
+
+
 
 ---
+
 
 ## 📄 License
 
-> _Add license info here, or remove this section if not applicable._
 
 This project is licensed under the [MIT License](LICENSE).
