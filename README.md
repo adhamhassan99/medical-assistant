@@ -12,6 +12,7 @@ git clone https://github.com/adhamhassan99/medical-assistant.git
 cd medical-assistant
 yarn
 yarn run start
+i ( for ios simulator )
 ```
 
 ---
