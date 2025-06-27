@@ -8,7 +8,7 @@ A mobile application built using React Native and Expo.
 
 
 ```
-git clone <your-repo-url>
+git clone https://github.com/adhamhassan99/medical-assistant.git
 cd medical-assistant
 yarn
 yarn run start
